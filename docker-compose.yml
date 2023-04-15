@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  terraform:
+    build:
+      dockerfile: terraform.Dockerfile
+      context: .
+    volumes:
+      - .:/Challenge
+    working_dir: /Challenge
+    environment:
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_REGION: "${AWS_REGION}"
